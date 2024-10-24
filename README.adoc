@@ -256,7 +256,16 @@ gcc injection_input_aslr.c
 ./vuln $(./a.out)
 ----
 
-Повторяйте, пока не запустится `sh` (например, используя такой скрипт: `run=0; while ! ./vuln $(./a.out); do ((run+=1)); done; echo $run`).
+Повторяйте, пока не запустится `sh`, например, используя такой bash-скрипт:
+
+[source,bash]
+----
+run=0
+while ! ./vuln $(./a.out); do
+    ((run+=1))
+done
+echo $run
+----
 
 == Ссылки для самостоятельного изучения
 
